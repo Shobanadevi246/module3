@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Hospital Pharmacy System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+Smart Hospital Pharmacy System
+</header>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar hidden" id="sidebar">
+
+<h2>Dashboard</h2>
+
+<div id="adminMenu" class="hidden">
+
+<button onclick="showSection('registerSection')">New Employee</button>
+
+<button onclick="showEmployees()">Employee Details</button>
+
+<button onclick="showLocked()">Locked Employees</button>
+
+<button onclick="showProducts()">Product Details</button>
+
+</div>
+
+
+<div id="employeeMenu" class="hidden">
+
+<button onclick="showSection('addProductSection')">Add Product</button>
+
+<button onclick="showProducts()">Product Details</button>
+
+<button onclick="showLowStock()">Low Stock</button>
+
+<button onclick="showOutStock()">Out Of Stock</button>
+
+</div>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<!-- MAIN AREA -->
+
+<div class="main">
+
+<div id="alertBox" class="notification hidden"></div>
+
+<!-- LOGIN HOME -->
+
+<div id="homePage" class="card center">
+
+<h2>Select Login</h2>
+
+<button onclick="openAdminLogin()">Admin Login</button>
+<button onclick="openEmployeeLogin()">Employee Login</button>
+
+</div>
+
+<!-- ADMIN LOGIN -->
+
+<div id="adminLoginPage" class="card hidden center">
+
+<h3>Admin Login</h3>
+
+<input id="adminUser" placeholder="Username">
+<input id="adminPass" type="password" placeholder="Password">
+
+<button onclick="adminLogin()">Login</button>
+
+<button onclick="goHome()">Back</button>
+
+</div>
+
+<!-- EMPLOYEE LOGIN -->
+
+<div id="employeeLoginPage" class="card hidden center">
+
+<h3>Employee Login</h3>
+
+<input id="empEmail" placeholder="Email">
+<input id="empPassword" type="password" placeholder="Password">
+
+<button onclick="employeeLogin()">Login</button>
+
+<button onclick="forgotPassword()">Forgot Password</button>
+
+<button onclick="goHome()">Back</button>
+
+</div>
+
+<!-- REGISTER EMPLOYEE -->
+
+<div id="registerSection" class="card hidden">
+
+<h3>Register Employee</h3>
+
+<input id="regName" placeholder="Name">
+<input id="regEmail" placeholder="Email">
+<input id="regMobile" placeholder="Mobile Number">
+<input id="regEmpId" placeholder="Employee ID">
+<input id="regShop" placeholder="Shop Number">
+<input id="regPass" placeholder="Password">
+
+<button onclick="registerEmployee()">Register</button>
+
+</div>
+
+<!-- EMPLOYEE DETAILS -->
+
+<div id="employeeSection" class="card hidden">
+
+<h3>Employees</h3>
+
+<div id="employeeList"></div>
+
+</div>
+
+<!-- LOCKED EMPLOYEE -->
+
+<div id="lockedSection" class="card hidden">
+
+<h3>Locked Employees</h3>
+
+<div id="lockedList"></div>
+
+</div>
+
+<!-- ADD MEDICINE -->
+
+<div id="addProductSection" class="card hidden">
+
+<h3>Add Medicine</h3>
+
+<input id="pimage" placeholder="Medicine Image URL">
+
+<input id="pname" placeholder="Medicine Name">
+
+<input id="pqty" type="number" placeholder="Stock Quantity">
+
+<input id="pexpiry" type="date">
+
+<button onclick="addProduct()">Add Medicine</button>
+
+</div>
+
+<!-- PRODUCT DETAILS -->
+
+<div id="productSection" class="card hidden">
+
+<h3>Medicine Inventory</h3>
+
+<input id="searchBox" placeholder="Search Medicine..." onkeyup="searchMedicine()">
+
+<div id="productList"></div>
+
+</div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
